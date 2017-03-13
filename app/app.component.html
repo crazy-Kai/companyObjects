@@ -1,0 +1,82 @@
+<nav class="navbar navbar-default navbar-fixed-top"  style="width:100%;">
+
+
+    <div class="collapse navbar-collapse" id="navbar">
+   		<ul class="nav navbar-nav"  >
+            <li><span class="nav-product-name">逸曜合理用药系统</span></li>
+            <li><a>规则管理</a></li>
+            <li><a>干预</a></li>
+            <li><a>分析</a></li>
+            <li class="checked"><a>医保控费</a></li>
+            <li><a>医保报表</a></li>
+         </ul>
+          <ul class="nav navbar-nav navbar-right">
+           
+          	<li>
+          		<!-- <a (click)=onClickName($event)>admin<span class="caret"></span></a> -->
+              <a class="user"><span class="user-icon"></span>admin<span class="caret"></span></a>
+          		<!-- <ul class="my-logout-btn" *ngIf="isDropdownMenu"  style="display:block">
+      				<li><a (click)="logout()">退出</a></li>
+  				  </ul> 
+   -->
+          	</li>
+           	<li><a class="setting"><span class="nav-setting"></span><span class="nav-icon"></span></a></li>
+        </ul>
+    </div>
+ 
+		
+
+</nav>
+<div class="main-content flex" >
+
+    <div class="slidebar" >
+             <div class="menu-button">
+                <span class="menu-button-bar"></span>
+                <span class="menu-button-bar" style="margin: 3px 0;"></span>
+                <span class="menu-button-bar"></span>
+              </div>
+     
+        <ul *ngFor="let menu of menus" class="nav nav-stacked nav-slidebar">
+            <li >
+                <a class="sec-nav" (click)="selectMenu = menu;"  [class.checked]="menu == selectMenu" >
+                    <span class="slide-icon icon-{{menu.id}} " ></span>
+                    <span routerLink={{menu.resource}}>{{menu.title}}</span>
+                    <i class="arrow-icon opened" *ngIf="menu.subMenus.length > 0" [class.opened]="menu==selectMenu"></i>
+                </a>
+                <!--slide收起的时候显示-->
+              <!--   <div *ngIf="!navOpenStatus" class="min-slide" [class.opened]="menu == hoveredMenu"> -->
+                 <!-- <div  class="min-slide" >
+                    <a class="min-sec-nav" >{{menu.title}}</a>
+                    <ul *ngIf="menu.subMenus.length > 0">
+                        <li *ngFor="let submenu of menu.subMenus">
+                            <a   [class.checked-thr-min]="submenu == selectedThrMenu"
+                                class="min-thr-nav">{{submenu.title}}</a>
+                                 <a  class="min-thr-nav">{{submenu.title}}</a>
+                        </li>
+                    </ul>
+                </div> -->
+            </li>
+            <ul *ngIf="selectMenu == menu" class="nav nav-pills nav-stacked" >
+                <li *ngFor="let submenu of menu.subMenus">
+                    <a  class="thr-nav">
+                      <span class="list-icon"></span>
+                      <span routerLink={{submenu.resource}}> {{submenu.title}}</span>
+                    </a>
+                </li>
+            </ul>
+        </ul>
+    </div>
+    <div id="page" class="page flex1 flex column">
+        <div class="navigation-bar top-single-padding" >
+            <span>首页</span>
+            <span *ngFor="let navibar of naviBar">
+                <span>> </span><span>{{navibar.name}}</span>
+            </span>
+        </div>
+        <div class="flex1 component-container">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+</div>
+
