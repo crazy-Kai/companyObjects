@@ -38,7 +38,7 @@ export const menus: Menu[] = [{
         subMenus: [
             { title: '医保险种目录', resource: '' },
             { title: '医保疾病目录', resource: '' },
-            { title: '医保药品目录', resource: '' },
+            { title: '医保药品目录', resource: 'drugs' },
             { title: '医保项目目录', resource: '' },
             { title: '医保材料目录', resource: '' },
             { title: '医保药物组目录', resource: '' }

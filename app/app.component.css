@@ -118,6 +118,12 @@ option{
     width: 980px;
     margin: 0 auto;
 }
+.w480{
+    width:  480px;
+}
+.w350{
+    width: 350px;
+}
 .height500{
     min-height:500px;
 }
@@ -1004,4 +1010,7 @@ fieldset[disabled] .btn-primary.active {
 }
 .icon-home{
     background: url("../app/page/index/image/u71.png") no-repeat;
+}
+.inline-block{
+    display: inline-block;
 }

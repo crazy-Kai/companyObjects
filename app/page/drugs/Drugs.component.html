@@ -1,0 +1,32 @@
+<div class="drugsObject flex column pl15 pr15">
+	<div class="container-left pl15 pt15 pr15">
+		<div class="from-group mb5">
+			<label>险种:</label>
+			<div class="inline-block w480" >
+				<select-comp [option]="analysisTypeOption"></select-comp>
+			</div>
+		</div>
+		<div class="from-group">
+			<label>版本:</label>
+			<div *ngIf="isTextShow" class="inline-block  w480" >
+				<div class="inline-block"><span>V1.5(对应规则版本V2.0)</span><span class="switchVerson" (click)="isShow=true;isTextShow=false;">切换版本</span></div>
+				<div class="inline-block" style="float: right;">
+					<span class="verson-icon"></span>
+					<span>版本管理</span>
+				</div>
+			</div>
+			<div *ngIf="isShow" class="inline-block w480">
+				<div class="inline-block w350"  >
+						<select-comp [option]="analysisTypeOption"></select-comp>
+					
+				</div>
+				<div class="inline-block" style="float: right;line-height: 34px;">
+					<span class="verson-icon"></span>
+					<span>版本管理</span>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="container-right"></div>
+<div>

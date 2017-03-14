@@ -6,6 +6,8 @@ import { Injectable, ModuleWithProviders, NgModule } from '@angular/core';
 //页面
 import { IndexAppComponent } from './page/index/index.component';
 
+import { DrgusComponentApp } from './page/Drugs/Drugs.component';
+
 // @Injectable()
 // export class AuthGuard implements CanActivate {
 
@@ -31,6 +33,9 @@ const routes: Routes = [{
     path: 'home',
     component:IndexAppComponent
 
+},{
+    path :'drugs',
+    component: DrgusComponentApp,
 }
 
 ];

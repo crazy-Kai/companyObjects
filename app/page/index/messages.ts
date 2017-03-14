@@ -1,26 +1,30 @@
-class Field{
-	fieldDetail:string;
-}
-class AdvicecInformationc{
-	 adviceNumber:string;
-	 informationc:string;
-}
+
 export class InvalidInformationc{
 		name:string;
-		field:Field[];
-		advicecInformationc:AdvicecInformationc[];
+		field:string;	
+		advicecInformationc:string;
 }
 
 
-export const invalidInformationcs : InvalidInformationc[] = [
+export const InvalidInformationcs : InvalidInformationc[] = [
 		{
-			name:"规则名称",field:[
-					{fieldDetail:"缺失XXX字典/字段"},
-					{fieldDetail:"缺失XXX字典/字段"}
-				],
-			advicecInformationc	:[
-					{adviceNumber:"一",informationc:"建议在XX出将该值补充完善"},
-					{adviceNumber:""}
-			]
+			name:"规则名称",
+			field:"缺失字段",
+			advicecInformationc:"建议联系服务员"
+		},
+		{
+			name:"",
+			field:"",
+			advicecInformationc:"建议联系服务员"
+		},
+		{
+			name:"",
+			field:"缺失字段",
+			advicecInformationc:"建议联系服务员"
+		},
+		{
+			name:"",
+			field:"",
+			advicecInformationc:"建议联系服务员"
 		}
 ]
