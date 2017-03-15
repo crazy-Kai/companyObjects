@@ -20,17 +20,18 @@ module.exports = webpackMerge(commonConfig, {
     devServer: {
         historyApiFallback: true,
         stats: 'minimal',
-       // proxy: {
-       //       '/api/*': {
-       //          // target: 'http://120.26.216.119:10000',
-       //          // target: 'http://120.26.216.119:20000',
-       //          //target: 'http://10.1.3.99:8080',
-       //          // target:'http://112.124.98.224:8080/',
-       //          // target: 'http://192.168.3.127:8081',//吴剑
-       //          // target: 'http://10.1.3.120:8081',//建勇
-       //          // target: 'http://127.0.0.1:8081',
-       //          secure: false
-       //      }
-       //  }
+        /*webpack代理Api*/
+        proxy: {
+             '/ipharmacare-distributed-yb-web/*': {
+                target: 'http://10.1.2.37:8080',
+                // target: 'http://120.26.216.119:20000',
+                //target: 'http://10.1.3.99:8080',
+                // target:'http://112.124.98.224:8080/',
+                // target: 'http://192.168.3.127:8081',//吴剑
+                // target: 'http://10.1.3.120:8081',//建勇
+                // target: 'http://127.0.0.1:8081',
+                secure: false
+            }
+        }
     }
 });

@@ -1,6 +1,6 @@
 <div class="drugsObject flex column pl15 pr15">
 	<div class="container-left pl15 pt15 pr15">
-		<div class="from-group mb5">
+		<!-- <div class="from-group mb5">
 			<label>险种:</label>
 			<div class="inline-block w480" >
 				<select-comp [option]="analysisTypeOption"></select-comp>
@@ -26,6 +26,39 @@
 				</div>
 			</div>
 			
+		</div> -->
+		<div class="drug-tree mt10">
+			<div class="drug-header">
+						<div class="search-panel form-inline">
+					            <div class="form-group">
+					                <label class="control-label drug-name">药品名称：</label>
+					                <div class="input-group">
+					                    <div class="input-group-addon"></div>
+					                    <input class="form-control" type="text" placeholder="请输入关键字" />
+					                <button type="submit" class="btn btn-primary" >搜索</button>
+					                </div>
+					            </div>
+        				</div>
+						<div  class="fn-lh30 setting">
+							<span>警示信息设置</span>
+							<span>批量导入</span>
+						</div>
+						
+        			
+			</div>
+			<div id="data-category-list" class="category-list flex1">
+            <Tree [nodes]="drugsTreeData" class="my-tree" (onToggle)="getChildren($event)">
+                <template #treeNodeTemplate let-node>
+                    <div >
+                        <span [class.nodes-icon]="node.data.type == 0" [class.node-icon]="node.data.type != 0"></span>
+                        <span>{{node.data.name || node.data.bookName}}</span>
+                        <span *ngIf="node.data.type == 0 && node.data == curNode" (click)="add(node)"><img src="../../../images/commonicons/add-icon.svg"></span>
+                        <span *ngIf="node.data == curNode && node.data.pid != null" (click)="delData(node)"><img src="../../../images/commonicons/delete-icon.svg" style="vertical-align: -2px;"></span>
+                    </div>
+                </template>
+            </Tree>
+        </div>
+
 		</div>
 	</div>
 	<div class="container-right"></div>

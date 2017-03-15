@@ -114,6 +114,9 @@ option{
 .full-height{
     height:100%;
 }
+.fn-lh30{
+    line-height:30px;
+}
 .w980 {
     width: 980px;
     margin: 0 auto;

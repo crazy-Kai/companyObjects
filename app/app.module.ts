@@ -4,7 +4,8 @@ import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 import { provideInterceptorService } from 'ng2-interceptors';
 import { ServerInterceptor } from './server.interceptor';
-// import { TreeModule } from 'angular2-tree-component';
+//angular2 module
+import { TreeModule } from 'angular2-tree-component';
 
 import { AppRoutingModule } from '../app/app.routes';
 
@@ -32,7 +33,9 @@ import { DrgusComponentApp } from './page/Drugs/Drugs.component';
     DialogModule,
     AppRoutingModule,
     HttpModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    //tree
+    TreeModule 
 
   ],
   //组建
