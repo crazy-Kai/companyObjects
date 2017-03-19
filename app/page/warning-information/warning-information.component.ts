@@ -3,9 +3,9 @@ import { Component, OnInit, Input, trigger, state, style, transition, animate, V
 import { TreeComponent, TreeNode } from 'angular2-tree-component';
 
 @Component({
-	selector: ' warning-information',
-	templateUrl:' warning-information.component.html',
-	styleUrls:[' warning-information.component.css']
+	selector: 'warning-information',
+	templateUrl:'warning-information.component.html',
+	styleUrls:['warning-information.component.css']
 })
 export class WarningInformationComponent implements OnInit {
    //依赖注入

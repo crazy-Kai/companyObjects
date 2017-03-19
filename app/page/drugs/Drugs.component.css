@@ -26,10 +26,17 @@
 	font-weight: normal;
 	font-size: 12px;
 }
+.container-left .selected-insurance .select-top{
+	border:none;width:488px;
+}
+.btn-new-style{
+	position:absolute;top:-1px;right:0;height: 36px;border-radius: inherit;
+}
 /* tree style */
  .drug-tree{
  	width: 100%;
 	border: 1px solid #ddd;
+	overflow: auto;
 }
 .drug-tree .drug-header{
 	display: block;
@@ -47,9 +54,15 @@
 }
 .drug-tree .form-inline .form-group{
 	width: 100%;
+
+}
+.drug-tree .form-inline .form-group  .input-group{
+	position: relative;width:434px;
 }
 .drug-tree .form-inline .form-group  .input-group .form-control{
-	width: 336px;
+	width: 350px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 .drug-tree .drug-name{
 	font-weight: normal;
@@ -108,4 +121,8 @@
 .drugs-list .child-icon{
 	padding-left: 25px;height: 20px;
 	background: url('../app/page/drugs/image/u7569.png') center center no-repeat;
+}
+/*右侧*/
+.container-right{
+
 }

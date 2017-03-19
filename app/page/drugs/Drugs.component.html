@@ -1,10 +1,10 @@
 <!-- 药品目录模版 -->
-<div class="drugsObject" style="height: calc(100vh - 80px);">
-	<div class="container-left">
+<div class="drugsObject fn-clear" style="height: calc(100vh - 80px);">
+	<div class="container-left fn-left">
 		<div class="selected-insurance form-inline">
 			<div class="form-group">
-				<label class="control-label">险种:</label>
-				<div class="form-control  fn-W480" >
+				<label class="control-label fn-W28">险种:</label>
+				<div class="form-control select-top" >
 					<select-comp [option]="analysisTypeOption"></select-comp>
 				</div>
 			</div>
@@ -12,9 +12,9 @@
 				<label class="control-label">版本:</label>
 				<div *ngIf="isTextShow" class="fn-disInBl  fn-W480" >
 					<div class="fn-disInBl"><span>V1.5(对应规则版本V2.0)</span><span class="switchVerson" (click)="isShow=true;isTextShow=false;">切换版本</span></div>
-					<div class="fn-disInBl" style="float: right;">
+					<div class="fn-right" >
 						<span class="verson-icon"></span>
-						<span>版本管理</span>
+						<span class="fn-right fn-MR-8">版本管理</span>
 					</div>
 				</div>
 				<div *ngIf="isShow" class="fn-disInBl fn-W480">
@@ -22,9 +22,9 @@
 							<select-comp [option]="analysisTypeOption"></select-comp>
 						
 					</div>
-					<div class="fn-disInBl" style="float: right;line-height: 34px;">
+					<div class="fn-right fn-LH34">
 						<span class="verson-icon"></span>
-						<span>版本管理</span>
+						<span class="fn-right fn-MR-8">版本管理</span>
 					</div>
 				</div>
 				
@@ -34,11 +34,11 @@
 			<div class="drug-header">
 						<div class="search-panel form-inline">
 					            <div class="form-group">
-					                <label class="control-label drug-name">药品名称：</label>
+					                <label class="control-label drug-name fn-W60">药品名称：</label>
 					                <div class="input-group">
-					                    <div class="input-group-addon"></div>
-					                    <input class="form-control" type="text" placeholder="请输入关键字" />
-					                	<button type="submit" class="btn btn-primary" >搜索</button>
+					                    <div class="input-group-addon border-style"></div>
+					                    <input class="form-control border-style" type="text" placeholder="请输入关键字" />
+					                	<button type="submit" class="btn btn-primary btn-new-style">搜索</button>
 					                </div>
 					            </div>
         				</div>
@@ -64,5 +64,5 @@
 
 		</div>
 	</div>
-	<div class="container-right"></div>
+	<div class="container-right fn-left">1111</div>
 <div>

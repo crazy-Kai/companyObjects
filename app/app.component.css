@@ -377,6 +377,7 @@ input:disabled.fn-input-text-date{background: #F2F2F2 url("../img/date.png") no-
 .fn-ML380{margin-left:380px;}
 .fn-MLauto{margin-left:auto;}
 .fn-MR50D{margin-right:-50px;}
+.fn-MR-8{margin-right:-8px;}
 .fn-MR4{margin-right:4px;}
 .fn-MR5{margin-right:5px;}
 .fn-MR10{margin-right:10px;}
@@ -488,6 +489,7 @@ input:disabled.fn-input-text-date{background: #F2F2F2 url("../img/date.png") no-
 .fn-W50P{width:50%;}
 .fn-W80P{width:80%;}
 .fn-W100P{width:100%;}
+.fn-W28{width:28px;}
 .fn-W40{width:40px;}
 .fn-W50{width:50px;}
 .fn-W60{width:60px;}
@@ -834,7 +836,7 @@ input:disabled.fn-input-text-date{background: #F2F2F2 url("../img/date.png") no-
 	height:30px;
 	line-height: 30px;
 	padding-left: 15px;
-
+	width: 100%;
 }
 #page{
 	background: #F5F7FA;
@@ -895,6 +897,9 @@ input:disabled.fn-input-text-date{background: #F2F2F2 url("../img/date.png") no-
 	background: url('../app/page/index/image/u34.png') no-repeat;
 }
 /* 图片*/
+.border-style{
+	border-radius: inherit;
+}
 
 
 

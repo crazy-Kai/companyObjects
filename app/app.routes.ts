@@ -8,7 +8,7 @@ import { IndexAppComponent } from './page/index/index.component';
 
 import { DrgusComponentApp } from './page/Drugs/Drugs.component';
 //警示信息设置
-import { WarningInformationComponent } from './page/ warning-information/ warning-information.component';
+import { WarningInformationComponent } from './page/warning-information/warning-information.component';
 //引入计算公式设置Component
 import { FormulaPreserveComponent } from './page/formula/formula-preserve.component';
 //版本生效设置
