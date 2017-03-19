@@ -1,33 +1,36 @@
-<div class="drugsObject flex column pl15 pr15">
-	<div class="container-left pl15 pt15 pr15">
-		<!-- <div class="from-group mb5">
-			<label>险种:</label>
-			<div class="inline-block w480" >
-				<select-comp [option]="analysisTypeOption"></select-comp>
+<!-- 药品目录模版 -->
+<div class="drugsObject" style="height: calc(100vh - 80px);">
+	<div class="container-left">
+		<div class="selected-insurance form-inline">
+			<div class="form-group">
+				<label class="control-label">险种:</label>
+				<div class="form-control  fn-W480" >
+					<select-comp [option]="analysisTypeOption"></select-comp>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label">版本:</label>
+				<div *ngIf="isTextShow" class="fn-disInBl  fn-W480" >
+					<div class="fn-disInBl"><span>V1.5(对应规则版本V2.0)</span><span class="switchVerson" (click)="isShow=true;isTextShow=false;">切换版本</span></div>
+					<div class="fn-disInBl" style="float: right;">
+						<span class="verson-icon"></span>
+						<span>版本管理</span>
+					</div>
+				</div>
+				<div *ngIf="isShow" class="fn-disInBl fn-W480">
+					<div class="fn-disInBl fn-W350"  >
+							<select-comp [option]="analysisTypeOption"></select-comp>
+						
+					</div>
+					<div class="fn-disInBl" style="float: right;line-height: 34px;">
+						<span class="verson-icon"></span>
+						<span>版本管理</span>
+					</div>
+				</div>
+				
 			</div>
 		</div>
-		<div class="from-group">
-			<label>版本:</label>
-			<div *ngIf="isTextShow" class="inline-block  w480" >
-				<div class="inline-block"><span>V1.5(对应规则版本V2.0)</span><span class="switchVerson" (click)="isShow=true;isTextShow=false;">切换版本</span></div>
-				<div class="inline-block" style="float: right;">
-					<span class="verson-icon"></span>
-					<span>版本管理</span>
-				</div>
-			</div>
-			<div *ngIf="isShow" class="inline-block w480">
-				<div class="inline-block w350"  >
-						<select-comp [option]="analysisTypeOption"></select-comp>
-					
-				</div>
-				<div class="inline-block" style="float: right;line-height: 34px;">
-					<span class="verson-icon"></span>
-					<span>版本管理</span>
-				</div>
-			</div>
-			
-		</div> -->
-		<div class="drug-tree mt10">
+		<div class="drug-tree" style="height:calc(100vh - 210px);">
 			<div class="drug-header">
 						<div class="search-panel form-inline">
 					            <div class="form-group">
@@ -35,25 +38,25 @@
 					                <div class="input-group">
 					                    <div class="input-group-addon"></div>
 					                    <input class="form-control" type="text" placeholder="请输入关键字" />
-					                <button type="submit" class="btn btn-primary" >搜索</button>
+					                	<button type="submit" class="btn btn-primary" >搜索</button>
 					                </div>
 					            </div>
         				</div>
-						<div  class="fn-lh30 setting">
+						<div  class="fn-LH32 setting">
 							<span>警示信息设置</span>
 							<span>批量导入</span>
 						</div>
 						
         			
 			</div>
-			<div id="data-category-list" class="category-list flex1">
-            <Tree [nodes]="drugsTreeData" class="my-tree" (onToggle)="getChildren($event)">
+			<div id="data-drugs-list" class="drugs-list " >
+            <Tree [nodes]="drugsTreeData" class="my-tree" [options]="options" (onToggle)="getChildren($event)" (onActivate)="chooseNode($event)">
                 <template #treeNodeTemplate let-node>
                     <div >
-                        <span [class.nodes-icon]="node.data.type == 0" [class.node-icon]="node.data.type != 0"></span>
+                        <span [class.child-icon]="node.data.type == 1" [class.nodes-icon]="node.data.type != 1" ></span>
                         <span>{{node.data.name || node.data.bookName}}</span>
-                        <span *ngIf="node.data.type == 0 && node.data == curNode" (click)="add(node)"><img src="../../../images/commonicons/add-icon.svg"></span>
-                        <span *ngIf="node.data == curNode && node.data.pid != null" (click)="delData(node)"><img src="../../../images/commonicons/delete-icon.svg" style="vertical-align: -2px;"></span>
+                        <span *ngIf="node.data.type !== 1 && node.data == curNode" (click)="add(node)"><img src="../../../images/commonicons/add-icon.svg" style="vertical-align: -2px;"></span>
+                        <span *ngIf="node.data == curNode && node.data.type != 2" (click)="delData(node)"><img src="../../../images/commonicons/delete-icon.svg" style="vertical-align: -2px;"></span>
                     </div>
                 </template>
             </Tree>

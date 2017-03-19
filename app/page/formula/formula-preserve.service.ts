@@ -1,4 +1,16 @@
-/*药品目录service*/
+//import {Injectable}     from '@angular/core';
+//import {Http, Response} from '@angular/http';
+//import {Headers, RequestOptions} from '@angular/http';
+//import {InterceptorService } from 'ng2-interceptors';
+//
+//@Injectable()
+//export class FormulaPreserveService {
+//
+//  constructor(
+//      private http: InterceptorService) { }
+//
+//}
+
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Headers, RequestOptions } from '@angular/http';

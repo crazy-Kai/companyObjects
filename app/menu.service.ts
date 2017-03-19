@@ -5,7 +5,8 @@ import { menus } from './menus.ts';
 
 @Injectable()
 export class MenuService {
-    getMenus(){
-        return Promise.resolve(menus)
-    }
+    // getMenus(){
+    //     return Promise.resolve(menus)
+    // }
+    menus = menus;
 }

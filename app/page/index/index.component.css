@@ -14,6 +14,7 @@
 	height:50px;
 	line-height: 50px;
 	width: 100%;
+	padding-left: 15px;
 }
 .indexStyle .header-title .title-name{
 	font-size: 18px;
@@ -24,6 +25,8 @@
 	background: #fff;
 	width: 100%;
 	min-height: 650px;
+	margin-top: 20px;
+	
 }
 
 .message-container .message-title,.init-project-directory .init-project-title,.daily-maintain .daily-maintain-title{

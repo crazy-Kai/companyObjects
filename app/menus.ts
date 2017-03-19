@@ -53,9 +53,9 @@ export const menus: Menu[] = [{
             { title: '医保政策文件', resource: '' },
             { title: '规则分析类型', resource: '' },
             { title: '机构基本信息', resource: '' },
-            { title: '警示方式设置', resource: '' },
-            { title: '版本生效设置', resource: '' },
-            { title: '计算公式设置', resource: '' }
+            { title: '警示方式设置', resource: 'warning-information' },
+            { title: '版本生效设置', resource: 'Version-effect' },
+            { title: '计算公式设置', resource: 'formula-preserve' }
         ]
     }, {
         id: 5,
@@ -64,7 +64,7 @@ export const menus: Menu[] = [{
         title: '医保规则',
         resource:"",
         subMenus: [
-            { title: '医保规则管理', resource: 'alert-message' },
-          
+            { title: '医保规则管理', resource: 'Health-management-rules' },
+
         ]
     }];

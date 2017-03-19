@@ -1,33 +1,77 @@
-<nav class="navbar navbar-default navbar-fixed-top"  style="width:100%;">
+    <div id="drgusPage">
+      <div class="drgus-navbar">
+        <div  id="navbar"  class="fn-clear">
+             <div class="fn-left">
+                <span class="nav-product-name">逸曜合理用药系统</span>
+             </div>
+       		   <ul>
+                <li><a>用药干预</a></li>
+                <li><a>用药点评</a></li>
+                <li><a>用药分析</a></li>
+                <li ><a class="checked">医保控费</a></li>
+                <li><a>医保报表</a></li>
+             </ul>
+             <div class="fn-right">
+                <span class="fn-right nav-setting fn-MR40 fn-ML20 fn-MT18"></span>
+                <span class=" fn-right nav-icon fn-ML15 fn-MT18 ">
+                </span>
+             </div>
+             <div class="fn-right" >
+                <span class="fn-right caret fn-disInBl fn-MT20 fn-ML5"></span>
+                <span class="fn-right fn-LH50 fn-ML12 fn-color-FFF fn-FS14">admin</span>
+                <span class="fn-right user-icon fn-MT10 fn-ML12"></span>
+             </div>
 
-
-    <div class="collapse navbar-collapse" id="navbar">
-   		<ul class="nav navbar-nav"  >
-            <li><span class="nav-product-name">逸曜合理用药系统</span></li>
-            <li><a>规则管理</a></li>
-            <li><a>干预</a></li>
-            <li><a>分析</a></li>
-            <li class="checked"><a>医保控费</a></li>
-            <li><a>医保报表</a></li>
-         </ul>
-          <ul class="nav navbar-nav navbar-right">
-           
-          	<li>
-          		<!-- <a (click)=onClickName($event)>admin<span class="caret"></span></a> -->
-              <a class="user"><span class="user-icon"></span>admin<span class="caret"></span></a>
-          		<!-- <ul class="my-logout-btn" *ngIf="isDropdownMenu"  style="display:block">
-      				<li><a (click)="logout()">退出</a></li>
-  				  </ul> 
-   -->
-          	</li>
-           	<li><a class="setting"><span class="nav-setting"></span><span class="nav-icon"></span></a></li>
-        </ul>
+        
+        </div>
+      </div>
+      <div class="main-content " style="min-height: calc(100vh - 50px);">
+     
+        <div class="content-left" style="height: calc(100vh - 50px);">
+              <div class="menu-button">
+                <span class="menu-button-bar"></span>
+                <span class="menu-button-bar" style="margin: 3px 0;"></span>
+                <span class="menu-button-bar"></span>
+              </div>
+             <ul *ngFor="let menu of menuService.menus" >
+                <li >
+                    <a class="sec-nav" (click)="selectMenu = menu;"  [class.checked]="menu == selectMenu" >
+                        <span class="slide-icon icon-{{menu.id}} " ></span>
+                        <span routerLink={{menu.resource}}>{{menu.title}}</span>
+                        <i class="arrow-icon " *ngIf="menu.subMenus.length > 0" [class.opened]="menu==selectMenu"></i>
+                    </a>
+                 
+                </li>
+                <ul *ngIf="selectMenu == menu" class="nav nav-pills nav-stacked" >
+                    <li *ngFor="let submenu of menu.subMenus">
+                        <a  class="thr-nav">
+                          <span class="list-icon"></span>
+                          <span routerLink={{submenu.resource}}> {{submenu.title}}</span>
+                        </a>
+                    </li>
+                </ul>
+              </ul>
+        </div>
+        <div class="content-right" style="min-height: calc(100vh - 50px);" >
+             <div id="page" style="min-height: calc(100vh - 50px);" >
+                <div class=" top-single-padding" >
+                    <span>首页</span>
+                    <span *ngFor="let navibar of naviBar">
+                        <span>> </span><span>{{navibar.name}}</span>
+                    </span>
+                </div>
+                <div class="component-container">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+      </div>
     </div>
  
 		
 
-</nav>
-<div class="main-content flex" >
+
+<!-- <div class="main-content " >
 
     <div class="slidebar" >
              <div class="menu-button">
@@ -36,25 +80,14 @@
                 <span class="menu-button-bar"></span>
               </div>
      
-        <ul *ngFor="let menu of menus" class="nav nav-stacked nav-slidebar">
+        <ul *ngFor="let menu of menuService.menus" class="nav nav-stacked nav-slidebar">
             <li >
                 <a class="sec-nav" (click)="selectMenu = menu;"  [class.checked]="menu == selectMenu" >
                     <span class="slide-icon icon-{{menu.id}} " ></span>
                     <span routerLink={{menu.resource}}>{{menu.title}}</span>
                     <i class="arrow-icon opened" *ngIf="menu.subMenus.length > 0" [class.opened]="menu==selectMenu"></i>
                 </a>
-                <!--slide收起的时候显示-->
-              <!--   <div *ngIf="!navOpenStatus" class="min-slide" [class.opened]="menu == hoveredMenu"> -->
-                 <!-- <div  class="min-slide" >
-                    <a class="min-sec-nav" >{{menu.title}}</a>
-                    <ul *ngIf="menu.subMenus.length > 0">
-                        <li *ngFor="let submenu of menu.subMenus">
-                            <a   [class.checked-thr-min]="submenu == selectedThrMenu"
-                                class="min-thr-nav">{{submenu.title}}</a>
-                                 <a  class="min-thr-nav">{{submenu.title}}</a>
-                        </li>
-                    </ul>
-                </div> -->
+             
             </li>
             <ul *ngIf="selectMenu == menu" class="nav nav-pills nav-stacked" >
                 <li *ngFor="let submenu of menu.subMenus">
@@ -79,4 +112,4 @@
     </div>
 
 </div>
-
+ -->

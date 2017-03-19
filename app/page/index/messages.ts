@@ -1,4 +1,4 @@
-
+/*假数据*/
 export class InvalidInformationc{
 		name:string;
 		field:string;	

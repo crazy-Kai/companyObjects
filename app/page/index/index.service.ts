@@ -1,3 +1,4 @@
+/*首页service*/
 import { Injectable } from '@angular/core';
 import { InvalidInformationcs,InvalidInformationc  } from './messages';
 

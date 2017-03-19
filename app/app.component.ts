@@ -31,9 +31,10 @@ export class AppComponent implements OnInit {
 
      
     ngOnInit() {
-        this.menuService.getMenus().then( menus => {
-            this.menus = menus;
-        })
+        // this.menuService.getMenus().then( menus => {
+        //     this.menus = menus;
+        // })
+        // this.menus = new ()this.menuService.getMenus()
 
     }
 

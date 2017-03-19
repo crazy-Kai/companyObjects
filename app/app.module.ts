@@ -24,6 +24,18 @@ import { HomeComponent } from './home.component';
 //页面
 import { IndexAppComponent } from './page/index/index.component';
 import { DrgusComponentApp } from './page/Drugs/Drugs.component';
+//警示信息设置
+import { WarningInformationComponent } from './page/ warning-information/ warning-information.component';
+//计算公式设置
+import { FormulaPreserveComponent } from './page/formula/formula-preserve.component';
+//版本生效设置
+import {VersionEffectComponent} from './page/Version-effect/Version-effect.component';
+//医保规则管理
+import {HealthManagementRules} from './page/Health-management-rules/Health-management-rules.component';
+//规则校验
+import {RulesCheckoutComponent} from './page/Health-management-rules/Rules-checkout.component';
+//版本管理
+import {VersionManagementComponent} from './page/Health-management-rules/version-management.component';
 
 @NgModule({
   //模版
@@ -45,6 +57,12 @@ import { DrgusComponentApp } from './page/Drugs/Drugs.component';
     IndexAppComponent,
     DrgusComponentApp ,// 药品目录
     SelectComponent,//下拉框组件
+    WarningInformationComponent, //警示信息设置
+    FormulaPreserveComponent,   //计算公式设置
+    VersionEffectComponent,  //版本生效设置
+    HealthManagementRules,   //医保规则管理
+    RulesCheckoutComponent,   //规则校验
+    VersionManagementComponent   //版本管理
 ],
 //依赖注入
  providers: [
